@@ -1,0 +1,23 @@
+{
+    "name": "grunt-mocha-browser",
+    "description": "Grunt task for run mocha test suite in browser",
+    "version": "0.0.1",
+    "keywords": [
+        "gruntplugin",
+        "mocha",
+        "mocha-browser",
+        "unittest"
+    ],
+    "author": {
+        "name": "Andrey Kucherenko",
+        "email": "kucherenko.andrey@gmail.com"
+    },
+    "dependencies": {
+        "mocha-browser": "~0.1.x"
+    },
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "main": "Gruntfile.js",
+    "readmeFilename": "README.md"
+}
