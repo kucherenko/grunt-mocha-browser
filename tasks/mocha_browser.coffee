@@ -4,13 +4,6 @@ module.exports = (grunt) ->
   path = require("path")
   exists = grunt.file.exists
 
-  grunt.registerTask "foo", "A sample task that logs stuff.", (arg1, arg2) ->
-    if arguments_.length is 0
-      grunt.log.writeln @name + ", no args"
-    else
-      grunt.log.writeln @name + ", " + arg1 + " " + arg2
-
-
   grunt.registerMultiTask "mocha_browser", "Mocha test suite for browser.", ->
     
     # Merge options
@@ -54,7 +47,6 @@ module.exports = (grunt) ->
       , (error, result, code) ->
         next()
       )
-      mocha_browser.stdout.pipe process.stdout
       mocha_browser.stderr.pipe process.stderr
       
       # Append output to be written to a file
@@ -69,6 +61,8 @@ module.exports = (grunt) ->
     ), ->
       if not output and errors > 0
         grunt.fail.warn errors + " tests failed"
-      else grunt.file.write output, results  if output
+      else if output
+        grunt.file.write output, results
+        grunt.log.writeln "File #{output} created."
       done()
 
