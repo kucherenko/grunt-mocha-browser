@@ -45,6 +45,7 @@ module.exports = (grunt) ->
         cmd: mocha_browser_path
         args: _.flatten([f].concat(args))
       , (error, result, code) ->
+        console.log result.stdout if options.reporter isnt 'html-cov'
         next()
       )
       mocha_browser.stderr.pipe process.stderr
