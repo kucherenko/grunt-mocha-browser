@@ -1,7 +1,7 @@
 {
     "name": "grunt-mocha-browser",
     "description": "Grunt task for run mocha test suite in browser",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "keywords": [
         "gruntplugin",
         "mocha",
@@ -13,7 +13,7 @@
         "email": "kucherenko.andrey@gmail.com"
     },
     "dependencies": {
-        "mocha-browser": "~0.1.x"
+        "mocha-browser": "~0.2.x"
     },
     "engines": {
         "node": ">=0.8.0"
